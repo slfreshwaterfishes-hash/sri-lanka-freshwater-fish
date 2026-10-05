@@ -1,0 +1,316 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #FAFBFC;
+    color: #1f2d3d;
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #12344D;
+}
+
+/* =========================
+   NAV
+========================= */
+header nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #12344D;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    transition: 0.25s ease;
+    background: rgba(47, 107, 87, 0.06);
+}
+
+header nav a:hover {
+    background: rgba(47, 107, 87, 0.18);
+    color: #2F6B57;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.search-wrapper {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 2000;
+}
+
+#searchInput {
+    width: 240px;
+    padding: 10px 14px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    width: 300px;
+    border-color: #2F6B57;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 140px 20px 80px;
+}
+
+.hero-content {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 56px;
+    color: #12344D;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    max-width: 650px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 820px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+/* =========================
+   FEATURED
+========================= */
+.featured {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.featured-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #12344D;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 10px 15px;
+}
+
+/* =========================
+   DATABASE (HOME)
+========================= */
+.database {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.db-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.db-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.db-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.db-card h3 {
+    font-size: 16px;
+    padding: 10px 0;
+    color: #12344D;
+}
+
+/* =========================
+   SNAKE PAGE (CLEAN FIXED)
+========================= */
+.snake-page {
+    padding-top: 120px;
+    background: #FAFBFC;
+}
+
+.snake-page .db-grid {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+    justify-items: center;
+}
+
+.snake-page .db-card {
+    width: 100%;
+    max-width: 200px;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.snake-page .db-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.snake-page .db-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+}
+
+.snake-page .text {
+    padding: 10px;
+    text-align: center;
+}
+
+.snake-page .si {
+    font-size: 15px;
+    font-weight: 700;
+    color: #12344D;
+}
+
+.snake-page .en {
+    font-size: 12px;
+    color: #2F6B57;
+}
+
+.snake-page .sc {
+    font-size: 11px;
+    font-style: italic;
+    color: #777;
+}
+
+.snake-page .fish-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.snake-page .db-grid {
+    align-items: stretch;
+}
+
+.snake-page .db-card {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.snake-page .db-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.snake-page .text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}

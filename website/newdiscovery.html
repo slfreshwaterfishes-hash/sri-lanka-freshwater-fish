@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <style>
+        :root {
+            --bg-dark: #050d1a;            /* Deep Dark Blue */
+            --card-bg: rgba(6, 26, 28, 0.65); /* Dark Greenish Tinted Glass */
+            --border: rgba(16, 185, 129, 0.2);/* Emerald Border Glow */
+            --glow-green: #10b981;        /* Dark Emerald Accent */
+            --glow-blue: #1e3a8a;         /* Deep Blue Accent */
+            --text-primary: #ffffff;      /* Crisp White */
+            --text-secondary: #94a3b8;    /* Soft Muted White/Blue */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient background glow mix (Dark Blue & Dark Green) */
+        .glow-1 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--glow-green) 0%, transparent 70%);
+            top: 35%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            opacity: 0.18;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--glow-blue) 0%, transparent 70%);
+            bottom: 20%;
+            right: 25%;
+            opacity: 0.35;
+            filter: blur(120px);
+            pointer-events: none;
+        }
+
+        .container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 40px rgba(2, 8, 18, 0.7);
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #10b981;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 12px #10b981;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #a7f3d0; /* Soft Greenish Light Text */
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="container">
+        <div class="status">
+            <span class="status-dot"></span> In Development
+        </div>
+        <h1>Under Construction</h1>
+        <p>This page is currently undergoing improvements and will be back shortly.</p>
+    </div>
+
+</body>
+</html>

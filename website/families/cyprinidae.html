@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cyprinidae Categories</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Main page wrapper pulled tightly right below the global header line */
+        .page-content {
+            max-width: 800px;
+            margin: 10px auto 40px; /* Sitting right below the header line */
+            padding: 0 20px;
+        }
+
+        /* Large heading positioned cleanly in the EXACT MIDDLE on top of the image */
+        .family-title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #2F6B57;
+            margin-top: 0;
+            margin-bottom: 15px; /* Tight gap before the banner image */
+            text-align: center; /* Centered perfectly */
+        }
+
+        /* Wide rectangle image container pulled right up under the title */
+        .hero-banner-container {
+            width: 100%;
+            height: 250px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Container for the 6 sub-category buttons */
+        .category-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* The action buttons matching your site theme */
+        .category-btn {
+            display: block;
+            text-align: center;
+            background-color: #f9f9f9;
+            border: 2px solid #2F6B57;
+            border-radius: 14px;
+            padding: 16px 20px;
+            font-size: 19px;
+            font-weight: bold;
+            color: #2F6B57;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+
+        .category-btn:hover {
+            background-color: #2F6B57;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="title">Fish Database</div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<section class="database snake-page">
+
+    <div class="page-content">
+        
+        <h1 class="family-title">Cyprinidae</h1>
+
+        <div class="hero-banner-container">
+            <img src="../../images/cyprinidae.jpg" alt="Cyprinidae Banner" class="hero-banner-img">
+        </div>
+
+        <div class="category-container">
+            
+            <a href="barbs.html" class="category-btn">
+                Barbs
+            </a>
+
+            <a href="carps.html" class="category-btn">
+                Carps
+            </a>
+
+            <a href="labeos.html" class="category-btn">
+                Labeos
+            </a>
+
+            <a href="danios-devarios.html" class="category-btn">
+                Danios & Devarios
+            </a>
+
+            <a href="rasboras.html" class="category-btn">
+                Rasboras
+            </a>
+
+            <a href="carplets.html" class="category-btn">
+                Carplets
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

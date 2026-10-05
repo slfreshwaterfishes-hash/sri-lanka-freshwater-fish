@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Environmental Threats - Freshwater Fishes of Sri Lanka</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Prevent fixed header from blocking top banner content */
+        body {
+            margin: 0;
+            padding-top: 70px; /* Adjusts for fixed header height */
+        }
+
+        /* High-Visibility Showcase Hero Banner Header */
+        .threats-hero {
+            background-color: #122921;
+            background: linear-gradient(135deg, #0b1a15 0%, #1c4235 100%);
+            color: #ffffff;
+            padding: 50px 20px 45px 20px;
+            text-align: center;
+            border-bottom: 4px solid #3d8b72;
+            margin-top: 0; /* Ensures clean transition below navbar */
+        }
+
+        .threats-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #ffffff !important;
+            margin: 0 0 14px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            line-height: 1.2;
+        }
+
+        .threats-hero p {
+            font-size: 16px;
+            max-width: 780px;
+            margin: 0 auto;
+            color: #e2ece8 !important;
+            line-height: 1.6;
+            font-weight: 400;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Container for cards */
+        .threats-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Featured Card Template */
+        .threat-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #dce5e1;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .threat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+        }
+
+        /* Large Image Area */
+        .threat-img-wrapper {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+            background-color: #eaf0ed;
+        }
+
+        .threat-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .threat-card:hover .threat-img-wrapper img {
+            transform: scale(1.03);
+        }
+
+        .threat-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #c9302c;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        /* Details Section */
+        .threat-details {
+            padding: 28px 32px;
+            background-color: #ffffff;
+        }
+
+        /* High Visibility Metadata Box */
+        .threat-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            background: #f0f5f3;
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2F6B57;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            color: #4a5d55;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .meta-val-en {
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: #1c4235;
+        }
+
+        .meta-val-sc {
+            font-style: italic;
+            font-size: 16px;
+            color: #2b3330;
+            font-weight: 600;
+        }
+
+        .meta-val-si {
+            font-size: 19px;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .threat-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333333;
+            margin: 0 0 20px 0;
+        }
+
+        /* View Details Button Indicator */
+        .card-btn {
+            display: inline-block;
+            background-color: #2F6B57;
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.2s ease;
+        }
+
+        .threat-card:hover .card-btn {
+            background-color: #1c4235;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .threats-hero {
+                padding: 35px 15px;
+            }
+
+            .threats-hero h1 {
+                font-size: 28px;
+            }
+
+            .threat-img-wrapper {
+                height: 260px;
+            }
+
+            .threat-details {
+                padding: 20px;
+            }
+
+            .threat-meta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="container">
+
+        <div class="title">
+            Freshwater Fishes of Sri Lanka
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#database">Database</a>
+            <a href="index.html#featured">Featured</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- HIGH-VISIBILITY HERO HEADER -->
+<section class="threats-hero">
+    <h1>Invasive Environmental Threats</h1>
+    <p>
+        Non-native predatory fish introduced into Sri Lanka's waterways disrupt delicate aquatic ecosystems, outcompete indigenous species, and pose critical threats to endemic biodiversity.
+    </p>
+</section>
+
+<!-- MAIN THREATS SHOWCASE -->
+<main class="threats-container">
+
+    <!-- 1: Alligator Gar -->
+    <a href="species/gars/atractosteus-spatula.html" class="threat-card">
+        <div class="threat-img-wrapper">
+            <span class="threat-badge">Invasive Predator</span>
+            <img src="../images/gars/atractosteus-spactula.jpg" alt="Alligator Gar">
+        </div>
+        <div class="threat-details">
+            <div class="threat-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">English Name</span>
+                    <span class="meta-val-en">Alligator Gar</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scientific Name</span>
+                    <span class="meta-val-sc">Atractosteus spatula</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Sinhala Name</span>
+                    <span class="meta-val-si">ඇලිගේටර් ගාර්</span>
+                </div>
+            </div>
+            <p class="threat-desc">
+                A massive freshwater apex predator native to North America. Released into local ecosystems through the aquarium trade, its heavy armored scales and sharp, dual-row teeth make it a severe threat to local native fish populations.
+            </p>
+            <span class="card-btn">View Full Species Profile &rarr;</span>
+        </div>
+    </a>
+
+    <!-- 2: Redline Snakehead -->
+    <a href="species/threats/redline.html" class="threat-card">
+        <div class="threat-img-wrapper">
+            <span class="threat-badge">High Ecological Risk</span>
+            <img src="../images/channa-micropeltes.jpg" alt="Redline Snakehead">
+        </div>
+        <div class="threat-details">
+            <div class="threat-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">English Name</span>
+                    <span class="meta-val-en">Redline Snakehead</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scientific Name</span>
+                    <span class="meta-val-sc">Channa micropeltes</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Sinhala Name</span>
+                    <span class="meta-val-si">රතු ඉරි ආරා</span>
+                </div>
+            </div>
+            <p class="threat-desc">
+                Known as one of the largest and most aggressive species of snakeheads. Possessing extremely sharp teeth and parental protection behavior, it aggressively outcompetes native predator fish like <i>Channa ara</i> (සූඩොලූලා).
+            </p>
+            <span class="card-btn">View Full Species Profile &rarr;</span>
+        </div>
+    </a>
+
+    <!-- 3: Clown Knifefish -->
+    <a href="species/threats/knifefish.html" class="threat-card">
+        <div class="threat-img-wrapper">
+            <span class="threat-badge">Invasive Carnivore</span>
+            <img src="../images/chitala-ornata.jpg" alt="Clown Knifefish">
+        </div>
+        <div class="threat-details">
+            <div class="threat-meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">English Name</span>
+                    <span class="meta-val-en">Clown Knifefish</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Scientific Name</span>
+                    <span class="meta-val-sc">Chitala ornata</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Sinhala Name</span>
+                    <span class="meta-val-si">මන්නා</span>
+                </div>
+            </div>
+            <p class="threat-desc">
+                A nocturnal carnivorous species originating from Southeast Asia. Widely established in rivers such as the Kelani, it feeds heavily on smaller native cyprinids and crustaceans, significantly reducing local aquatic biodiversity.
+            </p>
+            <span class="card-btn">View Full Species Profile &rarr;</span>
+        </div>
+    </a>
+
+</main>
+
+</body>
+</html>

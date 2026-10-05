@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Freshwater Fishes of Sri Lanka</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hover lift effect for clickable cards */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Enhanced Explore Database Hero Button */
+        .hero .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 28px;
+            background-color: #2F6B57;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(47, 107, 87, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #235243;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(47, 107, 87, 0.4);
+        }
+
+        /* Reset link decoration inside featured and database grids */
+        .featured-grid a, .db-grid a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Right-Aligned Search Bar Container */
+        .search-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-results-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            max-height: 320px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+
+        .search-results-dropdown a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s ease;
+        }
+
+        .search-results-dropdown a:hover {
+            background: #f4f8f6;
+        }
+
+        .search-results-dropdown .res-en {
+            font-weight: 600;
+            color: #2F6B57;
+        }
+
+        .search-results-dropdown .res-sc {
+            font-style: italic;
+            font-size: 13px;
+            color: #666;
+            margin-left: 8px;
+        }
+
+        .search-results-dropdown .res-si {
+            font-size: 14px;
+            color: #444;
+        }
+
+        .no-results {
+            padding: 12px 16px;
+            color: #777;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="container">
+
+        <div class="title">
+            Freshwater Fishes of Sri Lanka
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#database">Database</a>
+            <a href="#featured">Featured</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- SEARCH BAR -->
+<div class="search-bar">
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search fish (Sinhala / English / Scientific)">
+        <div id="searchResults" class="search-results-dropdown"></div>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Freshwater Fishes of Sri Lanka</h1>
+
+        <p class="hero-sub">
+            A scientific visual database of endemic, rare, and freshwater species across Sri Lanka.
+        </p>
+
+        <div class="hero-image">
+            <img src="../images/paradise.jpg" alt="Freshwater Fish Sri Lanka">
+        </div>
+
+        <a href="#database" class="btn">Explore Database →</a>
+
+    </div>
+
+</section>
+
+<!-- FEATURED SECTION -->
+<section class="featured" id="featured">
+
+    <h2>Featured Highlights</h2>
+
+    <div class="featured-grid">
+
+        <!-- Endemic Species -->
+        <a href="endemicspecies.html" class="hover-lift">
+            <div class="card">
+                <img src="../images/endemic.jpg" alt="Endemic Species">
+                <h3>Endemic Species</h3>
+                <p>Unique freshwater fishes found only in Sri Lanka’s ecosystems.</p>
+            </div>
+        </a>
+
+        <!-- New Discoveries -->
+        <a href="newdiscovery.html" class="hover-lift">
+            <div class="card">
+                <img src="../images/discoveries.jpg" alt="New Discoveries">
+                <h3>New Discoveries</h3>
+                <p>Recently identified or rare freshwater species recorded in Sri Lanka.</p>
+            </div>
+        </a>
+
+        <!-- Environmental Threats -->
+        <a href="environmentalthreats.html" class="hover-lift">
+            <div class="card">
+                <img src="../images/threats.jpg" alt="Threats">
+                <h3>Environmental Threats</h3>
+                <p>Pollution, habitat loss, and human impact on freshwater biodiversity.</p>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- DATABASE SECTION -->
+<section class="database" id="database">
+
+    <h2>Fish Database</h2>
+
+    <p class="db-sub">
+        Explore freshwater fish groups of Sri Lanka
+    </p>
+
+    <div class="db-grid">
+
+        <!-- 1: Cyprinidae -->
+        <a href="families/cyprinidae.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/cyprinidae/Pethia-bandula.jpg" alt="Cyprinidae">
+                <h3>Cyprinidae</h3>
+            </div>
+        </a>
+
+        <!-- 2: Snakeheads -->
+        <a href="families/snakeheads.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/snakeheads1.jpg" alt="Snakeheads">
+                <h3>Snakeheads</h3>
+            </div>
+        </a>
+
+        <!-- 3: Catfish -->
+        <a href="families/catfish.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/catfish.jpg" alt="Catfish">
+                <h3>Catfish</h3>
+            </div>
+        </a>
+
+        <!-- 4: Gouramies -->
+        <a href="families/gouramies.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/gouramies.jpg" alt="Gouramies">
+                <h3>Gouramies</h3>
+            </div>
+        </a>
+
+        <!-- 5: Cichlidae -->
+        <a href="families/cichlidae.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/cichlids.jpg" alt="Cichlidae">
+                <h3>Cichlidae</h3>
+            </div>
+        </a>
+
+        <!-- 6: Gars -->
+        <a href="families/gars.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/gars.jpg" alt="Halfbeaks & Gars">
+                <h3>Halfbeaks & Gars</h3>
+            </div>
+        </a>
+
+        <!-- 7: Loaches -->
+        <a href="families/loaches.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/loaches.jpg" alt="Loaches">
+                <h3>Loaches</h3>
+            </div>
+        </a>
+
+        <!-- 8: Gobies -->
+        <a href="families/gobies.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/gobies.jpg" alt="Gobies">
+                <h3>Gobies</h3>
+            </div>
+        </a>
+
+        <!-- 9: Eels -->
+        <a href="families/eels.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/eels.jpg" alt="Freshwater Eels">
+                <h3>Eels</h3>
+            </div>
+        </a>
+
+        <!-- 10: Killifish -->
+        <a href="families/killifishes.html" class="hover-lift">
+            <div class="db-card">
+                <img src="../images/killifish.jpg" alt="Killifish">
+                <h3>Killifish</h3>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SEARCH FUNCTIONALITY SCRIPT -->
+<script>
+    const fishDatabase = [
+        // Cichlidae
+        { en: "Orange Chromide", si: "කහ කොරළියා", sc: "Etroplus maculatus", url: "species/cichlidae/etroplus-maculatus.html" },
+        { en: "Green Chromide (Pearlspot)", si: "මල් කොරළියා", sc: "Etroplus suratensis", url: "species/cichlidae/etroplus-suratensis.html" },
+        { en: "Nile Tilapia", si: "තිලාපියා", sc: "Oreochromis niloticus", url: "species/cichlidae/oreochromis-niloticus.html" },
+        { en: "Mozambique Tilapia", si: "තෙත් තිලාපියා", sc: "Oreochromis mossambicus", url: "species/cichlidae/oreochromis-mossambicus.html" },
+        { en: "Wami Tilapia", si: "තිලාපියා", sc: "Oreochromis urolepis hornorum", url: "species/cichlidae/oreochromis-urolepis-hornorum.html" },
+        { en: "Redbreast Tilapia", si: "තිලාපියා", sc: "Tilapia rendalli", url: "species/cichlidae/tilapia-rendalli.html" },
+        { en: "Redbelly Tilapia (Zilli's Tilapia)", si: "තිලාපියා", sc: "Tilapia zillii", url: "species/cichlidae/tilapia-zillii.html" },
+        { en: "Mayan Cichlid", si: "මායන් සික්ලිඩ්", sc: "Mayaheros urophthalmus", url: "species/cichlidae/mayaheros-urophthalmus.html" },
+        
+        // Families / Categories
+        { en: "Cyprinidae", si: "ලේබියෝ, පෙතියන් ඇතුළු කුලය", sc: "Cyprinidae", url: "families/cyprinidae.html" },
+        { en: "Snakeheads", si: "ලූලා, කණයා ඇතුළු කුලය", sc: "Channidae", url: "families/snakeheads.html" },
+        { en: "Catfish", si: "අංකුට්ටා, අඳා ඇතුළු කුලය", sc: "Siluriformes", url: "families/catfish.html" },
+        { en: "Gouramies", si: "ගෝරාමි කුලය", sc: "Osphronemidae", url: "families/gouramies.html" },
+        { en: "Cichlidae", si: "කොරළියා, තිලාපියා කුලය", sc: "Cichlidae", url: "families/cichlidae.html" },
+        { en: "Halfbeaks & Gars", si: "තලකොස්සා, මොරල්ලා", sc: "Belonidae & Hemiramphidae", url: "families/gars.html" },
+        { en: "Loaches", si: "අහිරාවා කුලය", sc: "Nemacheilidae", url: "families/loaches.html" },
+        { en: "Gobies", si: "වැලිගොව්වා කුලය", sc: "Gobiidae", url: "families/gobies.html" },
+        { en: "Freshwater Eels", si: "ආඳා කුලය", sc: "Anguillidae", url: "families/eels.html" },
+        { en: "Killifish", si: "උඩහැඳියා කුලය", sc: "Aplocheilidae", url: "families/killifish.html" }
+    ];
+
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.trim().toLowerCase();
+        
+        if (query.length === 0) {
+            searchResults.innerHTML = '';
+            searchResults.style.display = 'none';
+            return;
+        }
+
+        const matches = fishDatabase.filter(fish => 
+            fish.en.toLowerCase().includes(query) ||
+            fish.si.toLowerCase().includes(query) ||
+            fish.sc.toLowerCase().includes(query)
+        );
+
+        if (matches.length > 0) {
+            searchResults.innerHTML = matches.map(fish => `
+                <a href="${fish.url}">
+                    <div>
+                        <span class="res-en">${fish.en}</span>
+                        <span class="res-sc">(${fish.sc})</span>
+                    </div>
+                    <span class="res-si">${fish.si}</span>
+                </a>
+            `).join('');
+        } else {
+            searchResults.innerHTML = `<div class="no-results">No fish found matching "${this.value}"</div>`;
+        }
+
+        searchResults.style.display = 'block';
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            searchResults.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
