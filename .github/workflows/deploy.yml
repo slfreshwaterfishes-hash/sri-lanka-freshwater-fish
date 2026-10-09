@@ -1,3 +1,4 @@
+
 name: Deploy website
 
 on:
@@ -5,7 +6,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-  
+
 permissions:
   contents: read
   pages: write
@@ -27,6 +28,39 @@ jobs:
           mkdir public
           cp -r website/* public/
           cp -r images public/images
+
+      - name: Generate sitemap
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.parse import quote
+          import xml.etree.ElementTree as ET
+
+          root = Path("public")
+          base_url = "https://freshwaterfishesofsrilanka.lk"
+
+          namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
+          ET.register_namespace("", namespace)
+          urlset = ET.Element(f"{{{namespace}}}urlset")
+
+          for page in sorted(root.rglob("*.html")):
+              if page == root / "index.html":
+                  url = base_url + "/"
+              else:
+                  relative = page.relative_to(root).as_posix()
+                  url = base_url + "/" + quote(relative, safe="/-._~")
+
+              entry = ET.SubElement(urlset, f"{{{namespace}}}url")
+              ET.SubElement(entry, f"{{{namespace}}}loc").text = url
+
+          ET.ElementTree(urlset).write(
+              root / "sitemap.xml",
+              encoding="utf-8",
+              xml_declaration=True
+          )
+
+          print("Sitemap generated successfully.")
+          PY
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
